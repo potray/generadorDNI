@@ -11,7 +11,8 @@ public class LetraDNI {
 	 * @return NIF completo.
 	 */
 	public static String letraDNI(int dni) {
-		return String.valueOf(dni) + NIF_STRING_ASOCIATION.charAt(dni % 23);
+		//Para que me rellene el DNI con ceros si el número es menor que 10000000 lo formateo.
+		return String.format("%08d", dni) + (NIF_STRING_ASOCIATION.charAt(dni % 23) - ('A' - 1));
 	}
 
 }
